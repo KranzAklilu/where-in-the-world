@@ -68,6 +68,7 @@ const Index = ({
                 ];
           });
         }
+        return "";
       });
     };
     const fetchSearchedData = async function () {
@@ -82,6 +83,7 @@ const Index = ({
             ...currentCountry,
             { name, flag, region, population, capital },
           ]);
+          return "done";
         });
       } catch (err) {
         setError("Country Not recognized try Searching again");
@@ -92,7 +94,15 @@ const Index = ({
       }
     };
     searchValue ? fetchSearchedData() : fetchData();
-  }, [url, currentCardCount, searchValue]);
+  }, [
+    url,
+    currentCardCount,
+    searchValue,
+    setRegion,
+    setSearchValue,
+    selectedRegion,
+    searchUrl,
+  ]);
 
   return (
     <>
@@ -102,7 +112,6 @@ const Index = ({
         ) : countryData[1] || countryData[0].name.length > 0 ? (
           countryData.map(
             ({ name, flag, region, population, capital }, index) => {
-              console.log(index, currentCardCount, showMoreLoader);
               return (
                 name && (
                   <>

@@ -34,10 +34,8 @@ const Index = ({
       </Link>
       <div className="detail-card__container">
         {flag ? (
-          // {img ? (
-          <img className="detail-card__img" src={flag} />
+          <img className="detail-card__img" src={flag} alt="countries flag" />
         ) : (
-          // <img className="detail-card__img" src={img} />
           <div className={`detail-card__skeleton ${theme}`}>
             <Skeleton
               color={theme === "dark" ? "hsl(209, 23%, 22%)" : "#ffffff"}
