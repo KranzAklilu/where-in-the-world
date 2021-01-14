@@ -1,0 +1,13 @@
+//Setup
+@import "./scss/index.scss";
+//Components
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10px;
+  @include themify($themes) {
+    color: themed("color");
+    background-color: themed("background");
+  }
+  @import "./components/index.scss";
+}

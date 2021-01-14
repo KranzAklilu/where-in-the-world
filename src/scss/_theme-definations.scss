@@ -1,0 +1,14 @@
+$themes: (
+  light: (
+    background: $very-light-gray,
+    element: $white,
+    color: $very-dark-blue,
+    boxShadow: $light-gray,
+  ),
+  dark: (
+    background: $very-dark-blue-bg,
+    element: $ocean-blue,
+    color: $white,
+    boxShadow: $dark-blue,
+  ),
+);

@@ -1,0 +1,46 @@
+.card {
+  cursor: pointer;
+  width: 70%;
+  max-width: 350px;
+  border-radius: 5px;
+  margin: 50px auto;
+  padding-bottom: 1px;
+  @include themify($themes) {
+    background-color: themed("element");
+    color: themed("color");
+  }
+  &__img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__text {
+    margin: 30px;
+    line-height: 1.5;
+  }
+  h3 {
+    margin-bottom: 25px;
+  }
+  span {
+    font-weight: 600;
+  }
+}
+
+.card-loader-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin: auto;
+}
+.card-loader {
+  width: 70%;
+  max-width: 350px;
+  margin: 50px auto;
+}
+.card-loader.light > span {
+  background-image: linear-gradient(
+    90deg,
+    rgb(250, 250, 250),
+    rgba(245, 245, 245, 0.2),
+    rgb(240, 240, 240)
+  );
+}

@@ -1,0 +1,46 @@
+.header {
+  margin-bottom: 75px;
+  padding: 20px 15px;
+  font-weight: 600;
+  @include themify($themes) {
+    background-color: themed("element");
+    box-shadow: 20px 0px 20px themed("boxShadow");
+  }
+  @include flex(row, space-between, center);
+  .logo {
+    font-weight: 800;
+    @include themify($themes) {
+      color: themed("color");
+    }
+  }
+  &__button {
+    cursor: pointer;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 300;
+    background-color: transparent;
+    @include flex(row, center, center);
+  }
+  .theme-icon {
+    width: 16px;
+    height: 16px;
+  }
+  &__button,
+  .theme-icon {
+    @include themify($themes) {
+      color: themed("color");
+      fill: themed("color");
+    }
+  }
+  p {
+    margin-left: 10px;
+  }
+}
+@media (min-width: $desktop-screen) {
+  .header {
+    padding: 20px 50px;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+}
